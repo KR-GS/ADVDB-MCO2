@@ -8,22 +8,22 @@
         </div>
         <br>
         <div class = "inputData">
-            <form id="input" action="">
+            <h3>New Game Entry</h3>
+            <form id="input" action="inputData.php" method="post">
                 <label for="gameName">Game: </label>
-                <input type="text" id="gameName">
+                <input type="text" id="gameName"><br>
+                <label for="date">Release Date: </label>
+                <input type="text" id="date"><br>
+                <label for="ageReq">Required Age </label>
+                <input type="text" id="ageReq"><br>
+                <label for="price">Price: </label>
+                <input type="text" id="price"><br>
+                <label for="dlc">DLC count on discount: </label>
+                <input type="text" id="dlc"><br>
                 <input type="submit" value="Submit">
             </form>
         </div>
-        <br>
-        <div class = "editData">
-            <form id="edit" action="">
-                <label for="gameName">Search Existing Game: </label>
-                <input type="text" id="gameName">
-                <label for="releaseYear">Change Release Year: </label>
-                <input type="text" id="releaseYear">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+        <br><br>
         <div class = "searchData">
             <form id="search" action="">
                 <label for="gameName">Search Existing Game: </label>
@@ -43,7 +43,7 @@
                     <th>Discount DLC Count</th>
                 </tr>
                 <?php
-                    include("database.php");
+                    include "displayTable.php";
                 ?>
             </table>
         </div>
