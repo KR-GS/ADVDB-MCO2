@@ -9,7 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $price = $_POST["price"];
     $dlc = $_POST["dlc"];
 
+
     $q = "INSERT INTO `game_dim` (`game_name`, `release_date`, `required_age`, `price` , `discount_dlc_count`) VALUES ('$gamename', '$date', '$ageReq', '$price', '$dlc')";
 
     $conn->query($q);
+    $conn->query("COMMIT");
+
+    header("Location: ../main.php");
+
+    die();
 }

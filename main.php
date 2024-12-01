@@ -11,16 +11,16 @@
             <h3>New Game Entry</h3>
             <form id="input" action="inputData.php" method="post">
                 <label for="gameName">Game: </label>
-                <input type="text" id="gameName"><br>
+                <input type="text" name="gameName"><br>
                 <label for="date">Release Date: </label>
-                <input type="text" id="date"><br>
+                <input type="text" name="date"><br>
                 <label for="ageReq">Required Age </label>
-                <input type="text" id="ageReq"><br>
+                <input type="text" name="ageReq"><br>
                 <label for="price">Price: </label>
-                <input type="text" id="price"><br>
+                <input type="text" name="price"><br>
                 <label for="dlc">DLC count on discount: </label>
-                <input type="text" id="dlc"><br>
-                <input type="submit" value="Submit">
+                <input type="text" name="dlc"><br>
+                <button type="submit" name="submit">Submit</button>
             </form>
         </div>
         <br><br>
