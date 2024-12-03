@@ -1,7 +1,7 @@
 <?php
     include "database.php";
 
-    $sql = "Select * from game_dim";
+    $sql = "Select * from game_dim limit 10";
     $data = $conn->query($sql);
 
     if ($data-> num_rows > 0){
