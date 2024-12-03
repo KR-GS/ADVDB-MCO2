@@ -34,6 +34,26 @@
             </form>
         </div>
         <br>
+        <br>
+        <div class="updateData">
+            <h3>Update Game Entry</h3>
+            <form id="update" action="updateData.php" method="post">
+                <label for="id">Game ID: </label>
+                <input type="text" name="id" placeholder="Enter Game ID"><br>
+                <label for="gameName">Game Name: </label>
+                <input type="text" name="gameName"><br>
+                <label for="date">Release Date: </label>
+                <input type="text" name="date"><br>
+                <label for="ageReq">Required Age: </label>
+                <input type="text" name="ageReq"><br>
+                <label for="price">Price: </label>
+                <input type="text" name="price"><br>
+                <label for="dlc">DLC count on discount: </label>
+                <input type="text" name="dlc"><br>
+                <button type="submit" name="update">Update</button>
+            </form>
+        </div>
+        <br>
         <div class = "displayData">
             <table>
                 <tr>
