@@ -1,13 +1,7 @@
 <?php
+include "database.php";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Database connection
-    $conn = new mysqli('localhost', 'root', '', 'game_dim');
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     // Retrieve form data
     $id = $_POST['id'];
     $gameName = $_POST['gameName'];
@@ -17,27 +11,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dlc = $_POST['dlc'];
 
     // Update query
-    $sql = "UPDATE games_table SET 
-            game_name = ?, 
-            release_date = ?, 
-            required_age = ?, 
-            price = ?, 
-            discount_dlc_count = ? 
-            WHERE id = ?";
+    $sql = "UPDATE `game_dim` SET 
+            `game_name` = '$gameName', 
+            `release_date` = '$date', 
+            `required_age` = '$ageReq', 
+            `price` = '$price', 
+            `discount_dlc_count` = '$dlc' 
+            WHERE `app_id` = $id";
 
-    // Prepare and bind
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssidsi", $gameName, $date, $ageReq, $price, $dlc, $id);
-
-    // Execute and check result
-    if ($stmt->execute()) {
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
         echo "Record updated successfully!";
     } else {
         echo "Error updating record: " . $conn->error;
     }
 
-    // Close connection
-    $stmt->close();
-    $conn->close();
+    // Redirect back to the main page
+    header("Location: ../main.php");
+    exit;
 }
 ?>
