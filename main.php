@@ -1,52 +1,6 @@
 <!DOCTYPE html>
 <?php
-    $db_mainserver = "ccscloud.dlsu.edu.ph:20182";
-    $db_server1 = "ccscloud.dlsu.edu.ph:20192";
-    $db_server2 = "ccscloud.dlsu.edu.ph:20202";
-
-    $db_mainname = "SteamGames";
-    $db_name1 = "Less2010";
-    $db_name2 = "After2010";
-    
-
-    $db_user = "username";
-    $db_pass = "password";
-
-    global $conn;
-
-    //$conn = new mysqli($db_server, $db_user, $db_pass, $db_name);
-    if($_SERVER["REQUEST_METHOD"] == "GET"){
-        if(isset($_GET["global"])){
-            try{
-                $conn = new mysqli($db_mainserver, $db_user, $db_pass, $db_mainname);
-                echo "Connection to main success!";
-            }
-            catch(mysqli_sql_exception){
-                echo "Could not connect to the main server!";
-            }
-           // header("Location: ../main.php");
-        }else if(isset($_GET["server1"])){
-            try{
-                $conn = new mysqli($db_server1, $db_user, $db_pass, $db_name1);
-                echo "Connection to server 1 success!";
-            }
-            catch(mysqli_sql_exception){
-                echo "Server 1 is down!";
-            }
-           // header("Location: ../main.php");
-        }else if(isset($_GET["server2"])){
-            try{
-                $conn = new mysqli($db_mainserver, $db_user, $db_pass, $db_mainname);
-                echo "Connection to server 2 success!";
-            }
-            catch(mysqli_sql_exception){
-                echo "Server 2 is down!";
-            }
-            //header("Location: ../main.php");
-        }else{
-            $conn="";
-        }        
-    }
+    include "database.php";
 ?>
 <html>
     <body>
@@ -58,6 +12,9 @@
             </form>
         </div>
         <br>
+        <?php
+            // include "inputData.php";
+        ?>
         <div class = "inputData">
             <h3>New Game Entry</h3>
             <form id="input" action="inputData.php" method="post">
@@ -71,17 +28,17 @@
                 <input type="text" name="price"><br>
                 <label for="dlc">DLC count on discount: </label>
                 <input type="text" name="dlc"><br>
-                <button type="submit" name="submit">Submit</button>
+                <button type="submit" name="insert">Submit</button>
             </form>
         </div>
-        <br><br>
+        <!-- <br><br>
         <div class = "searchData">
             <form id="search" action="displayTable.php">
                 <label for="gameName">Search Existing Game: </label>
                 <input type="text" name="gameName">
                 <input type="submit" value="submit">
             </form>
-        </div>
+        </div> -->
         <br>
         <br>
         <div class="updateData">
