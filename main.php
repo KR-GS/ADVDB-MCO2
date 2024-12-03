@@ -12,7 +12,7 @@
     $db_user = "username";
     $db_pass = "password";
 
-    $conn = "";
+    global $conn;
 
     //$conn = new mysqli($db_server, $db_user, $db_pass, $db_name);
     if($_SERVER["REQUEST_METHOD"] == "GET"){
@@ -94,26 +94,7 @@
                     <th>Discount DLC Count</th>
                 </tr>
                 <?php
-                    //include "database.php";
-
-                    $sql = "Select * from game_dim limit 10";
-                    if($conn != ""){
-                        $data = $conn->query($sql);
-                        
-                        if ($data-> num_rows > 0){
-                            while ($row = $data-> fetch_assoc()) {
-                                echo "<tr><td>".$row["app_ID"].
-                                        "</td><td>".$row["game_name"].
-                                        "</td><td>".$row["release_date"].
-                                        "</td><td>".$row["required_age"].
-                                        "</td><td>".$row["price"].
-                                        "</td><td>".$row["discount_dlc_count"]."
-                                        </td><td><a class='btn' href='deletedata.php?id=$row[app_ID]'>Delete</a>
-                                        </td></tr>";
-                            }
-                            echo "</table>";
-                        }
-                    }
+                    include "displayTable.php";
                 ?>
             </table>
         </div>

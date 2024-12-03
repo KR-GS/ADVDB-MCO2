@@ -1,6 +1,7 @@
 <?php
-    include "database.php";
+    //include "main.php";
 
+    //$conn = $_GET['conn'];
     $sql = "Select * from game_dim limit 10";
     $data = $conn->query($sql);
 
