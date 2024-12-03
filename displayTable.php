@@ -11,7 +11,9 @@
                     "</td><td>".$row["release_date"].
                     "</td><td>".$row["required_age"].
                     "</td><td>".$row["price"].
-                    "</td><td>".$row["discount_dlc_count"]."</td></tr>";
+                    "</td><td>".$row["discount_dlc_count"]."
+                    </td><td><a class='btn' href='deletedata.php?id=$row[app_ID]'>Delete</a>
+                    </td></tr>";
         }
         echo "</table>";
     }
