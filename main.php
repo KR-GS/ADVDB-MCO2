@@ -25,10 +25,10 @@
         </div>
         <br><br>
         <div class = "searchData">
-            <form id="search" action="">
+            <form id="search" action="displayTable.php">
                 <label for="gameName">Search Existing Game: </label>
-                <input type="text" id="gameName">
-                <input type="submit" value="Submit">
+                <input type="text" name="gameName">
+                <input type="submit" value="submit">
             </form>
         </div>
         <br>
