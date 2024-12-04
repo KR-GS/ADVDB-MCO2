@@ -10,7 +10,7 @@
             $header1 = "games_count"; //input name of table header for year
             $header2 = "release_year";
             $reportName = "Number of games per year";
-        }else if($reportOption=="gameNo"){
+        }else if($reportOption=="ageReq"){
             $sql = "SELECT COUNT(*) AS age_count, YEAR (release_date) AS release_year FROM game_dim WHERE age > =17 GROUP BY release_year, ORDER BY release_year";
             $header1 = "age_count"; //input name of table header for year
             $header2 = "release_year";
