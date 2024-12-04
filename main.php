@@ -37,9 +37,9 @@
         </div>
         <br><br>
         <div class = "searchData">
-            <form id="search" action="reportGenerator.php">
-                <label for="gameName">Generate Report: </label>
-                <select name="reportGenerate" id="reportGenerate">
+            <form id="search" action="reportGeneration.php" method="post">
+                <label for="reportGenerate">Generate Report: </label>
+                <select name="reportGenerate">
                     <option value="gameNo">Number of games per year</option>
                     <option value="ageReq">Number of games for 17 above per year</option>
                 </select>
