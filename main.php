@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <?php
     include "database.php";
+
+
+
+
 ?>
 <html>
     <body>
         <div class = "changeServer">
             <form action="#" method="GET">
-                <button type="submit" name="global" value="global"> Global Server </button>
+                <button type="submit" name="global" value="global"> Main Server </button>
                 <button type="submit" name="server1" value="server1">Server 1</button>
                 <button type="submit" name="server2" value="server2">Server 2</button>
             </form>
         </div>
         <br>
-        <?php
-            // include "inputData.php";
-        ?>
+
         <div class = "inputData">
             <h3>New Game Entry</h3>
             <form id="input" action="inputData.php" method="post">
+                <label for="id">Game ID: </label>
+                <input type="text" name="id"><br>
                 <label for="gameName">Game: </label>
                 <input type="text" name="gameName"><br>
                 <label for="date">Release Date: </label>

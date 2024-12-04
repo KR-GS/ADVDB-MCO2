@@ -9,8 +9,6 @@
     $db_user = "username";
     $db_pass = "password";
 
-    $conn = "";
-
     $selected_server = "main";
     
     //$conn = new mysqli($db_server, $db_user, $db_pass, $db_name);
@@ -21,16 +19,13 @@
         }else if(isset($_GET["server2"])){
             $selected_server = "server2";
             //header("Location: ../main.php");
-        }else{
-            $conn="";
-        }        
+        } 
     }
 
     a:
     $server = $db_servers[$selected_server];
-
-    
     $conn = new mysqli($server["host"], $db_user, $db_pass, $server["db"]);
+    
 
     if(!$conn){
         if($selected_server=="main"){

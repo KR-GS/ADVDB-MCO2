@@ -9,6 +9,7 @@
 
     //echo $row;
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $id = $_POST["id"];
         $gamename = $_POST["gameName"];
         $date = $_POST["date"];
         $ageReq = $_POST["ageReq"];
@@ -16,7 +17,7 @@
         $dlc = $_POST["dlc"];
 
 
-        $q = "INSERT INTO `game_dim` (`game_name`, `release_date`, `required_age`, `price` , `discount_dlc_count`) VALUES ('$gamename', '$date', '$ageReq', '$price', '$dlc')";
+        $q = "INSERT INTO `game_dim` (`app_ID`, `game_name`, `release_date`, `required_age`, `price` , `discount_dlc_count`) VALUES ('$id', '$gamename', '$date', '$ageReq', '$price', '$dlc')";
 
         $data = mysqli_query($conn, $q);
 
