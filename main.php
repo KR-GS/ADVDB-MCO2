@@ -35,14 +35,17 @@
                 <button type="submit" name="insert">Submit</button>
             </form>
         </div>
-        <!-- <br><br>
+        <br><br>
         <div class = "searchData">
-            <form id="search" action="displayTable.php">
-                <label for="gameName">Search Existing Game: </label>
-                <input type="text" name="gameName">
+            <form id="search" action="reportGenerator.php">
+                <label for="gameName">Generate Report: </label>
+                <select name="reportGenerate" id="reportGenerate">
+                    <option value="gameNo">Number of games per year</option>
+                    <option value="ageReq">Number of games for 17 above per year</option>
+                </select>
                 <input type="submit" value="submit">
             </form>
-        </div> -->
+        </div>
         <br>
         <br>
         <div class="updateData">
