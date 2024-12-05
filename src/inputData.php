@@ -1,11 +1,11 @@
 <?php
     include "database.php";
 
-    if ($conn instanceof mysqli) {
-        echo "Database connection is successful!";
-    } else {
-        echo "Error: $conn";  // This will display what $conn contains if it's not a valid object
-    }
+    // if ($conn instanceof mysqli) {
+    //     echo "Database connection is successful!";
+    // } else {
+    //     echo "Error: $conn";  // This will display what $conn contains if it's not a valid object
+    // }
 
     //echo $row;
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -21,7 +21,7 @@
 
         $data = mysqli_query($conn, $q);
 
-    header("Location: ../index.php");
+        header("Location: ../index.php");
 
         die();
     }
