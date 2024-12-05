@@ -37,5 +37,5 @@
         }
             
     }
-    echo "<a href='main.php'>Return to Main Page</a>";
+    echo "<a href='../index.php'>Return to Main Page</a>";
     
