@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Redirect back to the main page
-    header("Location: ../index.php");
+    header("Location: https://advdb-mco2-52k3.onrender.com");
     exit;
 }
 ?>
