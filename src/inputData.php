@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $conn->query($q);
 
-    header("Location: ../main.php");
+    header("Location: ../index.php");
 
     die();
 }

@@ -6,6 +6,6 @@
         $sql = "DELETE from `game_dim` where app_id=$id";
         $conn->query($sql);
 
-        header("Location: ../main.php");
+        header("Location: ../index.php");
         exit;
     }

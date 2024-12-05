@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Redirect back to the main page
-    header("Location: ../main.php");
+    header("Location: ../index.php");
     exit;
 }
 ?>
