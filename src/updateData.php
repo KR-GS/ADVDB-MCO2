@@ -21,13 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully!";
+        $_SESSION['message'] = "Record updated successfully!";
     } else {
-        echo "Error updating record: " . $conn->error;
+        $_SESSION['error'] = "Error updating record: " . $conn->error;
     }
 
     // Redirect back to the main page
-    header("Location: https://advdb-mco2-52k3.onrender.com");
+    echo "<script>location.href = 'https://advdb-mco2-52k3.onrender.com/index.php';</script>"; 
     exit;
 }
 ?>
